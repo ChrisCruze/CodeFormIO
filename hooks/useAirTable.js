@@ -36,7 +36,7 @@ function update_airtable_data({ base, name, updateAirtableData, keys }) {
           console.error({ err });
           return;
         } else {
-          console.log({ base, name, l });
+          // console.log({ base, name, l });
           updateAirtableData(l);
         }
       }

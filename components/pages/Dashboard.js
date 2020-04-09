@@ -21,18 +21,28 @@ function upload_file_content(name, code) {
   });
   formData.append("webmasterfile", blob);
   var request = new XMLHttpRequest();
-  request.open("POST", "https://hooks.zapier.com/hooks/catch/229795/0u0v92/");
-  request.send(formData);
+  // request.open("POST", "https://hooks.zapier.com/hooks/catch/229795/0u0v92/");
+  // request.open("POST", "https://hooks.zapier.com/hooks/catch/229795/csktj2/");
+  console.log("hi");
+  request.open("POST", "https://hooks.zapier.com/hooks/catch/229795/lmosoc/");
+  console.log({ formData });
+  // request.send(formData);
 }
 
+const ButtonClick = e => {
+  e.preventDefault();
+  console.log("hi");
+  // upload_file_content("tester123abc", "blah blah");
+  // alert("hi");
+};
 const Dashboard = () => {
   const code_airtable = codeAirTable();
-  console.log({ code_airtable });
+  // console.log({ code_airtable });
   return (
     <Container>
       <Header />
       <Content>
-        <Button>
+        <Button onPress={ButtonClick}>
           <Text>Click Me!</Text>
         </Button>
       </Content>
