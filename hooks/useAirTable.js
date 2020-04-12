@@ -49,14 +49,14 @@ function update_airtable_data_complete({ id, name, updateAirtableData, keys }) {
 }
 
 const useAirTable = ({ id, name, keys }) => {
-  const [airtable_data, updateAirtableData] = useState([]);
+  const [data, updateAirtableData] = useState([]);
   useEffect(() => {
     update_airtable_data_complete({ id, name, updateAirtableData, keys });
   }, [id, name]);
-  function updateAirTable() {
+  function refresh() {
     update_airtable_data_complete({ id, name, updateAirtableData, keys });
   }
-  return { airtable_data, updateAirTable };
+  return { data, refresh };
 };
 
 export default useAirTable;
