@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import Dashboard from "./components/pages/Dashboard";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Dashboard />
-    </View>
+    // <View style={styles.container}>
+    <Dashboard />
+    // </View>
   );
 }
 
