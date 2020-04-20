@@ -120,7 +120,12 @@ const SearchBar = ({ searchText, updateSearchText }) => {
 function searchArrayFromTextDict(D, search_text) {
   const name_formatted = String(D["Name"]).toLowerCase() + String(D["Note"]).toLowerCase() + String(D["Code"]).toLowerCase();
   const search_text_formatted = String(search_text).toLowerCase();
-  return name_formatted.indexOf(search_text_formatted) > -1;
+  if (search_text == ""|| search_text== undefined){
+    return true 
+  }else{
+      return name_formatted.indexOf(search_text_formatted) > -1;
+
+  }
 }
 function searchArrayFromTextArray(array, search_text) {
   return array.filter(function(D) {
@@ -158,13 +163,15 @@ const DrawerContainer = ({ children, drawerState, updateDrawerState, content }) 
 };
 
 const Dashboard = () => {
+  const [searchText, updateSearchText] = useState("");
+  const [drawerState, updateDrawerState] = useState();
+  const [drawerObject, updateDrawerObject] = useState();
+
   const code_airtable_js = codeAirTableJS();
   const code_array = code_airtable_js.data;
   const code_list_filtered = searchArrayFromTextArray(code_array, searchText);
 
-  const [searchText, updateSearchText] = useState("");
-  const [drawerState, updateDrawerState] = useState();
-  const [drawerObject, updateDrawerObject] = useState();
+
 
   return (
     <PropsContext.Provider value={{ updateDrawerObject, drawerObject, drawerState, code_array }}>

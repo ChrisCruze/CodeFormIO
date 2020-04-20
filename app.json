@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "codeform",
+    "name": "Codeform",
+    "slug": "Codeform",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -22,7 +22,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.codeform.xyz"
+    },
+    "description": ""
   }
 }
